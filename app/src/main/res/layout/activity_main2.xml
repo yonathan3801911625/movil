@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+
+    <TextView
+        android:textColor="@color/mytinto"
+        android:id="@+id/txtTittle"
+        android:layout_width="182dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="32dp"
+        android:text="IMC"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="128dp"
+        android:src="@drawable/body"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:textColor="@color/myamarillo"
+        android:id="@+id/editTextEstatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.402"
+        app:layout_constraintStart_toEndOf="@+id/txtEstatura"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPeso" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/mytinto"
+        android:id="@+id/txtPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="376dp"
+        android:text="Peso (Kg) ="
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/mytinto"
+        android:id="@+id/txtEstatura"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:text="Estatura (m) ="
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/txtPeso"
+        app:layout_constraintTop_toBottomOf="@+id/txtPeso" />
+
+    <Button
+        android:backgroundTint="@color/myrojo"
+        android:id="@+id/btnCalcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Calcular IMC"
+        app:layout_constraintBottom_toTopOf="@+id/resultado"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEstatura" />
+
+    <EditText
+        android:textColor="@color/myamarillo"
+        android:id="@+id/editTextPeso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="368dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toEndOf="@+id/txtPeso"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="@color/myamarillo"
+        android:id="@+id/resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCalcular"
+        app:layout_constraintVertical_bias="0.551" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
