@@ -2,6 +2,7 @@ package com.example.application1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import  android.widget.Button;
@@ -10,18 +11,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity2 extends AppCompatActivity {
+public class IMC extends AppCompatActivity {
 
     ImageView imagenEstado;
     EditText txtAltura;
     EditText txtPeso;
     Button btnCalcularIMC;
     TextView txtResultado;
+    private String nombreUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.imc);
         imagenEstado= findViewById(R.id.imageView);
         txtAltura=findViewById(R.id.editTextEstatura);
         txtPeso=findViewById(R.id.editTextPeso);
@@ -29,6 +31,9 @@ public class MainActivity2 extends AppCompatActivity {
         txtResultado= findViewById(R.id.resultado);
         btnCalcularIMC.setOnClickListener(this::onclick);
         txtPeso.setOnClickListener(this::onclick);
+        Intent intent = getIntent();
+        nombreUsuario = intent.getStringExtra("nombreIMC");
+        Toast.makeText(this, " "+nombreUsuario+" bienvenid@ a IMC ",Toast.LENGTH_SHORT).show();
 
 
 

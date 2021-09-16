@@ -2,11 +2,11 @@ package com.example.application1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,18 +14,19 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity3 extends AppCompatActivity {
+public class CONVERT extends AppCompatActivity {
 
     ImageView imagenPrincipal;
     Spinner spinnerDe;
     Spinner spinnerPara;
     Button btnConvertir;
     TextView txtResultado;
+    private String nombreUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.convert);
 
         //Add Money spinnerA
         Spinner spnMoneda0 = (Spinner) findViewById(R.id.spinnerA);
@@ -33,7 +34,7 @@ public class MainActivity3 extends AppCompatActivity {
         monedaList0.add(new SpinnerMoney("1", "Peso Colombiano"));
 
         //Fill Data spinnerA
-        ArrayAdapter<SpinnerMoney> monedaAdapter0 = new ArrayAdapter<SpinnerMoney>(MainActivity3.this,
+        ArrayAdapter<SpinnerMoney> monedaAdapter0 = new ArrayAdapter<SpinnerMoney>(CONVERT.this,
                 android.R.layout.simple_spinner_dropdown_item, monedaList0);
         spnMoneda0.setAdapter(monedaAdapter0);
 
@@ -49,7 +50,7 @@ public class MainActivity3 extends AppCompatActivity {
         monedaList.add(new SpinnerMoney("6", "Dirham"));
 
         //Fill Data spinnerDe
-        ArrayAdapter<SpinnerMoney> monedaAdapter = new ArrayAdapter<SpinnerMoney>(MainActivity3.this,
+        ArrayAdapter<SpinnerMoney> monedaAdapter = new ArrayAdapter<SpinnerMoney>(CONVERT.this,
                 android.R.layout.simple_spinner_dropdown_item, monedaList);
         spnMoneda.setAdapter(monedaAdapter);
 
@@ -63,6 +64,9 @@ public class MainActivity3 extends AppCompatActivity {
         txtResultado= findViewById(R.id.txtR);
         btnConvertir.setOnClickListener(this::onclick);
         txtResultado.setOnClickListener(this::onclick);
+        Intent intent = getIntent();
+        nombreUsuario = intent.getStringExtra("nombreConver");
+        Toast.makeText(this, " "+nombreUsuario+" bienvenid@ a convertidor ",Toast.LENGTH_SHORT).show();
 
     }
 

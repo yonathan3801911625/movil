@@ -5,23 +5,24 @@ package com.example.application1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
- public class MainActivity extends AppCompatActivity {
+ public class CALC extends AppCompatActivity {
     Button cero, uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, mas, menos, multi, divi, igual, punto, C;
     EditText pantalla;
     float mValueOne, mValueTwo;
-
+    private String nombreUsuario;
     boolean crunchifyAddition, mSubtract, crunchifyMultiplication, crunchifyDivision;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.calc);
 
         cero = findViewById(R.id.btn0);
         uno = findViewById(R.id.btn1);
@@ -41,6 +42,9 @@ import android.widget.Toast;
         punto = findViewById(R.id.btnPunto);
         C = findViewById(R.id.btnC);
         pantalla = findViewById(R.id.edtPantalla);
+        Intent intent = getIntent();
+        nombreUsuario = intent.getStringExtra("nombreCalc");
+        Toast.makeText(this, " "+nombreUsuario+" bienvenid@ a calculadora ",Toast.LENGTH_SHORT).show();
 
 
         punto.setOnClickListener(new View.OnClickListener() {
